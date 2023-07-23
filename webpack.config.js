@@ -1,5 +1,3 @@
-// Generated using webpack-cli https://github.com/webpack/webpack-cli
-
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
@@ -9,17 +7,27 @@ const isProduction = process.env.NODE_ENV == "production";
 const stylesHandler = "style-loader";
 
 const config = {
-  entry: "./src/index.js",
+  entry: path.resolve(__dirname, "src/index.html"),
   output: {
     path: path.resolve(__dirname, "dist"),
   },
+  //   for debugging source-map
+  //   devtool: "source-map";
   devServer: {
+    // static: {
+    //   directory: path.resolve(__dirname, "dist"),
+    // },
+    // host: 3000,
     open: true,
+    // hot: true,
+    // compress: true,
     host: "localhost",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: path.resolve(__dirname, "src/index.html"),
+      title: "Forkio",
+      filename: "index.html",
     }),
 
     // Add your plugins here
@@ -27,6 +35,21 @@ const config = {
   ],
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+          },
+          {
+            loader: "html-minifier-loader",
+            options: {
+              removeComments: true,
+              collapseWhitespace: true,
+            },
+          },
+        ],
+      },
       {
         test: /\.(js|jsx)$/i,
         loader: "babel-loader",
