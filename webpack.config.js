@@ -1,15 +1,32 @@
 const path = require("path");
+// html-plugin
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// workbox-plugin
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+// css-plugin
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
 const stylesHandler = "style-loader";
 
+// for development
+const mode = process.env.NODE_ENV || "dvelopment";
+const devMode = mode === "development";
+// const target = devMode ? "web" : "browserslist";
+// const devtool = devMode ? "source-map" : undefined;
+
 const config = {
-  entry: path.resolve(__dirname, "src/index.html"),
+  mode,
+  //   target,
+  //   devtool,
+  entry: {
+    index: path.resolve(__dirname, "src", "index.js"),
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
+    clean: true,
+    filename: "index.js",
   },
   //   for debugging source-map
   //   devtool: "source-map";
@@ -17,17 +34,20 @@ const config = {
     // static: {
     //   directory: path.resolve(__dirname, "dist"),
     // },
-    // host: 3000,
+    host: 3000,
     open: true,
-    // hot: true,
+    hot: true,
     // compress: true,
     host: "localhost",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/index.html"),
+      template: path.resolve(__dirname, "src", "index.html"),
       title: "Forkio",
-      filename: "index.html",
+      filename: "[name].html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "styles.css",
     }),
 
     // Add your plugins here
@@ -37,18 +57,17 @@ const config = {
     rules: [
       {
         test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-          },
-          {
-            loader: "html-minifier-loader",
-            options: {
-              removeComments: true,
-              collapseWhitespace: true,
-            },
-          },
-        ],
+        loader: "html-loader",
+        // use: [
+        //     loader: "html-loader",
+        //   {
+        //     loader: "html-minifier-loader",
+        //     options: {
+        //       removeComments: true,
+        //       collapseWhitespace: true,
+        //     },
+        //   },
+        // ],
       },
       {
         test: /\.(js|jsx)$/i,
@@ -56,11 +75,15 @@ const config = {
       },
       {
         test: /\.css$/i,
-        use: [stylesHandler, "css-loader"],
+        use: [stylesHandler, "style-loader", "css-loader"],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [stylesHandler, "css-loader", "sass-loader"],
+        use: [
+          devMode ? "style-loader" : MiniCssExtractPlugin,
+          "css-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,

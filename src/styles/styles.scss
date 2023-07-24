@@ -1,3 +1,33 @@
 @import "reset";
 @import "mixins";
 @import "variables";
+
+body {
+  background-color: beige;
+  font-size: 48px;
+}
+
+button {
+  color: white;
+  background: red;
+  padding: 15px 20px;
+  border-radius: 15px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  color: blueviolet;
+  background: violet;
+  transition: 1.5s;
+}
+
+.wrapper:hover {
+  color: violet;
+  background: blueviolet;
+  transition: 1.5s;
+}
