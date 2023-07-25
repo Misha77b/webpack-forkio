@@ -32,8 +32,9 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    clean: true,
     filename: "index.js",
+    assetModuleFilename: "images/[name][ext]",
+    clean: true,
   },
   //   for debugging source-map
   //   devtool: "source-map";

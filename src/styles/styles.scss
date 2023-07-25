@@ -3,8 +3,12 @@
 @import "variables";
 
 body {
+  color: white;
   background-color: beige;
   font-size: 48px;
+  background-image: url(../images/header-back.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 button {
