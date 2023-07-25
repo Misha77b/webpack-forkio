@@ -13,13 +13,20 @@ const stylesHandler = "style-loader";
 // for development
 const mode = process.env.NODE_ENV || "dvelopment";
 const devMode = mode === "development";
-// const target = devMode ? "web" : "browserslist";
-// const devtool = devMode ? "source-map" : undefined;
+const target = devMode ? "web" : "browserslist";
+const devtool = devMode ? "source-map" : undefined;
 
 const config = {
   mode,
-  //   target,
-  //   devtool,
+  target,
+  devtool,
+  devServer: {
+    port: 3000,
+    open: true,
+    hot: true,
+    // compress: true,
+    host: "localhost",
+  },
   entry: {
     index: path.resolve(__dirname, "src", "index.js"),
   },
@@ -30,16 +37,6 @@ const config = {
   },
   //   for debugging source-map
   //   devtool: "source-map";
-  devServer: {
-    // static: {
-    //   directory: path.resolve(__dirname, "dist"),
-    // },
-    host: 3000,
-    open: true,
-    hot: true,
-    // compress: true,
-    host: "localhost",
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
@@ -47,7 +44,7 @@ const config = {
       filename: "[name].html",
     }),
     new MiniCssExtractPlugin({
-      filename: "styles.css",
+      filename: "styles/styles.css",
     }),
 
     // Add your plugins here
@@ -71,16 +68,25 @@ const config = {
       },
       {
         test: /\.(js|jsx)$/i,
-        loader: "babel-loader",
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
       {
         test: /\.css$/i,
-        use: [stylesHandler, "style-loader", "css-loader"],
+        use: [
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader",
+        ],
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
-          devMode ? "style-loader" : MiniCssExtractPlugin,
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
           "css-loader",
           "sass-loader",
         ],

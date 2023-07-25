@@ -8,10 +8,13 @@ body {
 }
 
 button {
-  color: white;
-  background: red;
+  color: rgb(48, 48, 48);
+  background: gold;
   padding: 15px 20px;
   border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
 }
 
 .wrapper {
@@ -28,6 +31,6 @@ button {
 
 .wrapper:hover {
   color: violet;
-  background: blueviolet;
+  background: black;
   transition: 1.5s;
 }
