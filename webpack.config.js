@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
-const stylesHandler = "style-loader";
+// const stylesHandler = "style-loader";
 
 // for development
 const mode = process.env.NODE_ENV || "dvelopment";
@@ -32,17 +32,17 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index.js",
-    assetModuleFilename: "images/[name][ext]",
     clean: true,
+    filename: "[name].js",
+    assetModuleFilename: "images/[name][ext]",
   },
   //   for debugging source-map
   //   devtool: "source-map";
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src", "index.html"),
       title: "Forkio",
       filename: "[name].html",
+      template: path.resolve(__dirname, "src", "index.html"),
     }),
     new MiniCssExtractPlugin({
       filename: "styles/styles.css",

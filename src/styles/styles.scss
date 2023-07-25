@@ -1,40 +1,13 @@
 @import "reset";
 @import "mixins";
 @import "variables";
+@import "header";
 
-body {
-  color: white;
-  background-color: beige;
-  font-size: 48px;
-  background-image: url(../images/header-back.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-button {
-  color: rgb(48, 48, 48);
-  background: gold;
-  padding: 15px 20px;
-  border-radius: 15px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-}
-
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  color: blueviolet;
-  background: violet;
-  transition: 1.5s;
-}
-
-.wrapper:hover {
-  color: violet;
-  background: black;
-  transition: 1.5s;
-}
+// body {
+//   color: white;
+//   background-color: beige;
+//   font-size: 48px;
+//   background-image: url(../images/header-back.png);
+//   background-size: cover;
+//   background-repeat: no-repeat;
+// }
