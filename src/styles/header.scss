@@ -27,17 +27,17 @@
     display: none;
   }
 
-  &__logo-link:hover > &__logo-name {
-    color: white;
-  }
+  //   &__logo-link:hover > &__logo-name {
+  //     color: white;
+  //   }
 
-  &__logo-link:hover > &__logo-img-violet {
-    display: none;
-  }
+  //   &__logo-link:hover > &__logo-img-violet {
+  //     display: none;
+  //   }
 
-  &__logo-link:hover > &__logo-img-white {
-    display: block;
-  }
+  //   &__logo-link:hover > &__logo-img-white {
+  //     display: block;
+  //   }
   &__buy-now-btn {
     padding: 10px 25px;
     color: white;
@@ -45,11 +45,12 @@
     border-radius: 40px;
     border: none;
   }
-  &__buy-now-btn:hover {
-    color: #8d81ac;
-    background: white;
-  }
+  //   &__buy-now-btn:hover {
+  //     color: #8d81ac;
+  //     background: white;
+  //   }
   &__header-nav {
+    padding-bottom: 15px;
     position: absolute;
     width: 300px;
     display: flex;
@@ -71,6 +72,8 @@
     width: 8px;
     height: 53px;
     left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
     background: #8d81ac;
   }
   &__header-nav-item:hover {
