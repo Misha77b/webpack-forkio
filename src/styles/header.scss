@@ -1,6 +1,5 @@
 .header {
   min-width: 320px;
-  font-family: Montserrat;
   background-image: url(../images/header-back.png);
   background-repeat: no-repeat;
   //   background-size: cover;
@@ -16,11 +15,9 @@
   background: $header-nav-back;
   position: relative;
   &__logo-link {
+    @include lato-700-24px;
     display: flex;
     align-items: center;
-    font-family: Lato;
-    font-size: 24px;
-    font-weight: 700;
     gap: 20px;
     color: $primary-color;
   }
@@ -55,8 +52,8 @@
   //     background: white;
   //   }
   &__header-nav {
-    flex-direction: column;
     display: none;
+    flex-direction: column;
     padding-bottom: 15px;
     position: absolute;
     width: 300px;
@@ -89,9 +86,7 @@
 }
 
 .burger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-center;
   width: 26px;
   &__lines {
     position: relative;
@@ -121,56 +116,42 @@
 }
 
 .header-section {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  @include flex-dirColumn-center;
   position: relative;
   &__title {
+    @include montserrat-700-48px;
     margin-bottom: 25px;
     color: $white-color;
-    font-family: Montserrat;
-    font-size: 48px;
-    font-weight: 700;
   }
   &__subtitle {
     margin-bottom: 20px;
     width: 300px;
     text-align: center;
     color: $primary-color;
-    font-family: Montserrat;
-    font-size: 18px;
-    font-weight: 400;
+    @include montserrat-400-18px;
   }
   &__text {
+    @include montserrat-400-14px;
     margin-bottom: 417px;
     color: $secondary-color;
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: 400;
   }
   &__download {
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-dirColumn-center;
     bottom: 0;
-    transform: translateY(50%);
+    transform: translateY(65%);
   }
   &__download-btn {
+    @include montserrat-700-18px;
     margin-bottom: 15px;
     padding: 15px 30px;
-    font-family: Montserrat;
-    font-size: 18px;
-    font-weight: 700;
     color: $white-color;
     background: $primary-color;
     border-radius: 40px;
     border: none;
   }
   &__buy-now {
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: 400;
+    @include montserrat-400-14px;
     color: $secondary-color;
   }
 }
