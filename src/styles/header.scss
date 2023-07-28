@@ -3,7 +3,7 @@
   font-family: Montserrat;
   background-image: url(../images/header-back.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  //   background-size: cover;
   background-position: center;
 }
 .navigation {
@@ -148,8 +148,16 @@
     font-size: 14px;
     font-weight: 400;
   }
-  &__download-btn {
+  &__download {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 0;
+    transform: translateY(50%);
+  }
+  &__download-btn {
+    margin-bottom: 15px;
     padding: 15px 30px;
     font-family: Montserrat;
     font-size: 18px;
@@ -158,40 +166,11 @@
     background: $primary-color;
     border-radius: 40px;
     border: none;
-    bottom: 0;
-    transform: translateY(50%);
+  }
+  &__buy-now {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    color: $secondary-color;
   }
 }
-
-// .header-title {
-//   margin-bottom: 20px;
-//   font-family: Montserrat, sans-serif;
-//   font-size: 82px;
-//   font-weight: bold;
-//   color: white;
-// }
-
-// .header-subtitle {
-//   margin-bottom: 20px;
-//   font-family: Lato, sans-serif;
-//   font-size: 30px;
-//   color: #8d81ac;
-// }
-
-// .header-text {
-//   margin-bottom: 430px;
-//   font-family: Montserrat, sans-serif;
-//   font-size: 16px;
-//   color: #848e97;
-// }
-
-// .download-btn {
-//   padding: 23px 61px;
-//   font-family: Montserrat, sans-serif;
-//   font-size: 21px;
-//   font-weight: bold;
-//   color: #fff;
-//   background: #8d81ac;
-//   border-radius: 40px;
-//   border: none;
-// }
