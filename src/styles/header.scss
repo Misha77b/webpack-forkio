@@ -2,8 +2,12 @@
   min-width: 320px;
   background-image: url(../images/header-back.png);
   background-repeat: no-repeat;
-  //   background-size: cover;
   background-position: center;
+  @media (min-width: 481px) {
+    background-size: cover;
+  }
+  @media (min-width: 992px) {
+  }
 }
 .navigation {
   margin-bottom: 50px;
@@ -23,6 +27,9 @@
   }
   &__logo-name {
     display: none;
+    @media (min-width: 481px) {
+      display: block;
+    }
   }
 
   &__logo-img-white {
@@ -41,11 +48,16 @@
   //     display: block;
   //   }
   &__buy-now-btn {
+    @include montserrat-700-15px;
     padding: 10px 25px;
     color: $white-color;
     background: $primary-color;
     border-radius: 40px;
     border: none;
+  }
+  @media (min-width: 481px) {
+    @include montserrat-700-16px;
+    padding: 15px 30px;
   }
   //   &__buy-now-btn:hover {
   //     color: #8d81ac;
@@ -59,16 +71,32 @@
     width: 300px;
     top: 100%;
     background: #333333;
+    @media (min-width: 481px) {
+      padding: 0;
+      gap: 47px;
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      position: static;
+      background: transparent;
+    }
   }
+  //   burger show
   &__active {
     display: flex;
   }
   &__header-nav-item {
+    @include montserrat-400-26px;
     position: relative;
     color: $white-color;
-    font-size: 26px;
     padding: 36px;
     border-bottom: 3px solid #3b3b3b;
+    @media (min-width: 481px) {
+      padding: 0;
+      @include montserrat-700-16px;
+      color: $primary-color;
+      border: none;
+    }
   }
   &__header-nav-item:hover::before {
     position: absolute;
@@ -79,6 +107,9 @@
     top: 50%;
     transform: translateY(-50%);
     background: $primary-color;
+    @media (min-width: 481px) {
+      content: none;
+    }
   }
   &__header-nav-item:hover {
     color: $primary-color;
@@ -88,6 +119,9 @@
 .burger {
   @include flex-center-center;
   width: 26px;
+  @media (min-width: 481px) {
+    display: none;
+  }
   &__lines {
     position: relative;
     width: 100%;

@@ -11,8 +11,23 @@
   font-size: 18px;
   font-weight: 400;
 }
+@mixin montserrat-400-26px {
+  font-family: Montserrat;
+  font-size: 26px;
+  font-weight: 400;
+}
 
 // fw 700 monsterrat
+@mixin montserrat-700-15px {
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+}
+@mixin montserrat-700-16px {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+}
 @mixin montserrat-700-18px {
   font-family: Montserrat;
   font-size: 18px;
