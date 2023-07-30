@@ -1,0 +1,16 @@
+.editor {
+  min-width: 320px;
+  &__title {
+    margin-bottom: 30px;
+    padding: 0 30px;
+    @include fonts(Montserrat, 26px, 700);
+    color: $primary-color;
+    text-align: center;
+  }
+  &__text {
+    margin-bottom: 36px;
+    @include fonts(Lato, 14px, 400);
+    padding: 0 30px;
+    text-align: center;
+  }
+}
