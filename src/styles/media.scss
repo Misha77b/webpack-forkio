@@ -4,8 +4,9 @@
     background-size: cover;
   }
   .navigation {
+    margin-bottom: 70px;
     height: auto;
-    padding: 20px;
+    padding: 30px;
     flex-wrap: wrap;
     justify-content: space-between;
     &__logo-name {
@@ -56,7 +57,14 @@
 // laptop
 @media (min-width: 992px) {
   .navigation {
+    margin: 0 auto 90px;
+    max-width: 1200px;
     background: transparent;
+    justify-content: flex-end;
+    gap: 48px;
+    &__logo-link {
+      margin-right: auto;
+    }
     &__logo-link:hover > &__logo-name {
       color: white;
     }
@@ -82,6 +90,12 @@
     }
     &__header-nav-item:hover {
       color: $white-color;
+    }
+  }
+  .header-section {
+    &__download-btn:hover {
+      color: #8d81ac;
+      background: white;
     }
   }
 }

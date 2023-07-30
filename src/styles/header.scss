@@ -12,6 +12,7 @@
   align-items: center;
   background: $header-nav-back;
   position: relative;
+  z-index: 10;
   &__logo-link {
     @include fonts(Lato, 24px, 700);
     display: flex;
@@ -102,6 +103,21 @@
     width: 26px;
     top: 8px;
   }
+  &__lines-active {
+    background: transparent;
+  }
+  &__lines-active::before,
+  &__lines-active::after {
+    width: 23px;
+  }
+  &__lines-active::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  &__lines-active::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
 }
 
 .header-section {
@@ -139,11 +155,6 @@
     background: $primary-color;
     border-radius: 40px;
     border: none;
-    // media 900
-    // &__download-btn:hover {
-    //   color: #8d81ac;
-    //   background: white;
-    // }
   }
   &__buy-now {
     @include fonts(Montserrat, 14px, 400);
