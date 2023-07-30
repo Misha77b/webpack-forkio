@@ -1,0 +1,87 @@
+// tablet
+@media (min-width: 481px) {
+  .header {
+    background-size: cover;
+  }
+  .navigation {
+    height: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__logo-name {
+      display: block;
+    }
+    &__buy-now-btn {
+      @include fonts(Montserrat, 16px, 700);
+      padding: 15px 30px;
+    }
+    &__header-nav {
+      gap: 47px;
+      padding: 23px 0 0;
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      position: static;
+      background: transparent;
+      width: 100%;
+    }
+    &__header-nav-item {
+      @include fonts(Montserrat, 16px, 700);
+      padding: 0;
+      color: $primary-color;
+      border: none;
+    }
+  }
+  .burger {
+    display: none;
+  }
+  .header-section {
+    &__title {
+      @include fonts(Montserrat, 72px, 700);
+    }
+    &__subtitle {
+      @include fonts(Lato, 24px, 400);
+      width: 100%;
+      text-transform: none;
+    }
+    &__download-btn {
+      @include fonts(Montserrat, 21px, 700);
+      padding: 20px 60px;
+      border: 2px solid $primary-color;
+    }
+  }
+}
+
+// laptop
+@media (min-width: 992px) {
+  .navigation {
+    background: transparent;
+    &__logo-link:hover > &__logo-name {
+      color: white;
+    }
+    &__header-nav {
+      padding: 0;
+    }
+    &__logo-link:hover > &__logo-img-violet {
+      display: none;
+    }
+
+    &__logo-link:hover > &__logo-img-white {
+      display: block;
+    }
+    &__buy-now-btn {
+      order: 3;
+    }
+    &__buy-now-btn:hover {
+      color: $primary-color;
+      background: white;
+    }
+    &__header-nav {
+      width: auto;
+    }
+    &__header-nav-item:hover {
+      color: $white-color;
+    }
+  }
+}

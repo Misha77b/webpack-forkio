@@ -3,9 +3,6 @@
   background-image: url(../images/header-back.png);
   background-repeat: no-repeat;
   background-position: center;
-  @media (min-width: 481px) {
-    background-size: cover;
-  }
 }
 .navigation {
   margin-bottom: 50px;
@@ -15,15 +12,8 @@
   align-items: center;
   background: $header-nav-back;
   position: relative;
-  @media (min-width: 481px) {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  @media (min-width: 992px) {
-    background: transparent;
-  }
   &__logo-link {
-    @include lato-700-24px;
+    @include fonts(Lato, 24px, 700);
     display: flex;
     align-items: center;
     gap: 20px;
@@ -31,44 +21,20 @@
   }
   &__logo-name {
     display: none;
-    @media (min-width: 481px) {
-      display: block;
-    }
     @media (min-width: 992px) {
       background: transparent;
     }
   }
-  &__logo-link:hover > &__logo-name {
-    color: white;
-  }
-
-  &__logo-link:hover > &__logo-img-violet {
-    display: none;
-  }
-
-  &__logo-link:hover > &__logo-img-white {
-    display: block;
-  }
-
   &__logo-img-white {
     display: none;
   }
-
   &__buy-now-btn {
-    @include montserrat-700-15px;
+    @include fonts(Montserrat, 15px, 700);
     padding: 10px 25px;
     color: $white-color;
     background: $primary-color;
     border-radius: 40px;
-    border: none;
-  }
-  @media (min-width: 481px) {
-    @include montserrat-700-16px;
-    padding: 15px 30px;
-  }
-  &__buy-now-btn:hover {
-    color: #8d81ac;
-    background: white;
+    border: 1px solid $primary-color;
   }
   &__header-nav {
     display: none;
@@ -78,34 +44,17 @@
     width: 300px;
     top: 100%;
     background: #333333;
-    @media (min-width: 481px) {
-      padding: 0;
-      gap: 47px;
-      width: auto;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      position: static;
-      background: transparent;
-      width: 100%;
-    }
   }
   //   burger show
   &__active {
     display: flex;
   }
   &__header-nav-item {
-    @include montserrat-400-26px;
+    @include fonts(Montserrat, 26px, 400);
     position: relative;
     color: $white-color;
     padding: 36px;
     border-bottom: 3px solid #3b3b3b;
-    @media (min-width: 481px) {
-      padding: 0;
-      @include montserrat-700-16px;
-      color: $primary-color;
-      border: none;
-    }
   }
   &__header-nav-item:hover::before {
     position: absolute;
@@ -128,9 +77,6 @@
 .burger {
   @include flex-center-center;
   width: 26px;
-  @media (min-width: 481px) {
-    display: none;
-  }
   &__lines {
     position: relative;
     width: 100%;
@@ -162,28 +108,20 @@
   @include flex-dirColumn-center;
   position: relative;
   &__title {
-    @include montserrat-700-48px;
+    @include fonts(Montserrat, 48px, 700);
     margin-bottom: 25px;
     color: $white-color;
-    @media (min-width: 481px) {
-      @include montserrat-700-72px;
-    }
   }
   &__subtitle {
-    @include montserrat-400-18px;
+    @include fonts(Montserrat, 18px, 400);
     margin-bottom: 20px;
     width: 300px;
     text-align: center;
     color: $primary-color;
     text-transform: capitalize;
-    @media (min-width: 481px) {
-      @include lato-400-24px;
-      width: 100%;
-      text-transform: none;
-    }
   }
   &__text {
-    @include montserrat-400-14px;
+    @include fonts(Montserrat, 14px, 400);
     margin-bottom: 417px;
     color: $secondary-color;
   }
@@ -194,25 +132,21 @@
     transform: translateY(65%);
   }
   &__download-btn {
-    @include montserrat-700-18px;
+    @include fonts(Montserrat, 18px, 700);
     margin-bottom: 15px;
     padding: 15px 30px;
     color: $white-color;
     background: $primary-color;
     border-radius: 40px;
     border: none;
-    @media (min-width: 481px) {
-      @include montserrat-700-21px;
-      padding: 20px 60px;
-      border: 2px solid #8d81ac;
-    }
-  }
-  &__download-btn:hover {
-    color: #8d81ac;
-    background: white;
+    // media 900
+    // &__download-btn:hover {
+    //   color: #8d81ac;
+    //   background: white;
+    // }
   }
   &__buy-now {
-    @include montserrat-400-14px;
+    @include fonts(Montserrat, 14px, 400);
     color: $secondary-color;
   }
 }
