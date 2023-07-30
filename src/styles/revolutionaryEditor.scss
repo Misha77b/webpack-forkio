@@ -14,3 +14,40 @@
     text-align: center;
   }
 }
+
+.editor-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  &__item {
+    @include fonts(Montserrat, 14px, 700);
+    color: rgb(42, 42, 42);
+  }
+  &__icons-text {
+    padding: 5px 10px;
+    position: relative;
+    background: rgb(237, 237, 237);
+    border: 1px solid rgb(42, 42, 42);
+    border-radius: 3px 0 0 3px;
+  }
+  &__icons-text::before {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  &__watch-icon::before {
+    content: url(../images/eye.svg);
+  }
+  &__star-icon::before {
+    content: url(../images/star.svg);
+  }
+  &__fork-icon::before {
+    content: url(../images/fork.svg);
+  }
+  &__quantity {
+    padding: 5px 10px;
+    border: 1px solid rgb(42, 42, 42);
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+  }
+}
