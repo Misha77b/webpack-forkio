@@ -52,6 +52,42 @@
       border: 2px solid $primary-color;
     }
   }
+  .editor {
+    &__title {
+      font-size: 42px;
+    }
+    &__text {
+      margin-bottom: 50px;
+      font-size: 21px;
+    }
+  }
+  .whatYouGet {
+    &__title {
+      margin-bottom: 50px;
+      font-size: 42px;
+    }
+    &__products {
+      padding: 0 35px;
+      margin-bottom: 60px;
+      //   align-items: center;
+      gap: 60px;
+    }
+    &__products-item {
+      flex-direction: row;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    &__products-img {
+      align-self: center;
+      width: 111px;
+      height: 90px;
+      object-fit: contain;
+    }
+    &__products-desription {
+      max-width: 560px;
+      text-align: left;
+    }
+  }
 }
 
 // laptop
