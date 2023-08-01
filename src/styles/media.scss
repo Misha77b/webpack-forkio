@@ -74,18 +74,20 @@
     }
     &__products-item {
       flex-direction: row;
-      gap: 40px;
-      justify-content: space-between;
+      //   gap: 40px;
+      justify-content: center;
     }
     &__products-img {
+      margin-right: 23px;
       align-self: center;
-      width: 111px;
-      height: 90px;
-      object-fit: contain;
     }
     &__products-desription {
-      max-width: 560px;
+      max-width: 500px;
       text-align: left;
+    }
+    &__code-img {
+      max-width: 700px;
+      max-height: 520px;
     }
   }
 }
