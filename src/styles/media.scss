@@ -57,7 +57,7 @@
       font-size: 42px;
     }
     &__text {
-      margin-bottom: 50px;
+      margin-bottom: 35px;
       font-size: 21px;
     }
   }
@@ -69,12 +69,10 @@
     &__products {
       padding: 0 35px;
       margin-bottom: 60px;
-      //   align-items: center;
       gap: 60px;
     }
     &__products-item {
       flex-direction: row;
-      //   gap: 40px;
       justify-content: center;
     }
     &__products-img {
@@ -104,7 +102,7 @@
 // laptop
 @media (min-width: 992px) {
   .navigation {
-    margin: 0 auto 90px;
+    margin: 0 auto 70px;
     max-width: 1200px;
     background: transparent;
     justify-content: flex-end;
@@ -143,6 +141,32 @@
     &__download-btn:hover {
       color: #8d81ac;
       background: white;
+    }
+  }
+  .editor {
+    &__title {
+      font-size: 54px;
+    }
+    &__text {
+      max-width: 860px;
+      margin: 0 auto 35px;
+    }
+  }
+  .whatYouGet {
+    // max-width: 1200px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    &__title {
+      display: none;
+    }
+    &__products {
+      padding: 100px 0 0;
+      gap: 30px;
+    }
+    &__products-desription {
+      max-width: 370px;
     }
   }
 }
