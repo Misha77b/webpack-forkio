@@ -153,20 +153,30 @@
     }
   }
   .whatYouGet {
+    position: relative;
     // max-width: 1200px;
     background: #f4f4f4;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     &__title {
-      display: none;
+      position: absolute;
+      top: 95px;
+      left: 45%;
     }
     &__products {
-      padding: 100px 0 0;
+      margin-bottom: 20px;
+      padding: 74px 0 0 20px;
       gap: 30px;
     }
     &__products-desription {
-      max-width: 370px;
+      max-width: 350px;
+    }
+    &__code-img-container {
+      padding: 0;
+    }
+    &__code-img {
+      height: 519px;
     }
   }
 }
