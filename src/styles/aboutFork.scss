@@ -1,0 +1,52 @@
+.about-fork {
+  padding: 57px 25px 0;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../images/people-talk-back.png);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  &__title {
+    margin-bottom: 53px;
+    text-align: center;
+    @include fonts(Montserrat, 36px, 700);
+    color: $white-color;
+  }
+  &__web-items-container {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 45px;
+  }
+  &__web-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 345px;
+    gap: 30px;
+    @include fonts(Lato, 16px, 700);
+    font-style: italic;
+    color: $white-color;
+  }
+  &__item-description {
+    text-align: center;
+  }
+  &__bottom-text {
+    position: relative;
+    margin-bottom: 40px;
+    text-align: center;
+    @include fonts(Lato, 14px, 400);
+    line-height: 21px;
+    color: #a291a5;
+  }
+  &__bottom-text::after {
+    position: absolute;
+    align-self: center;
+    bottom: -20px;
+    content: "";
+    width: 245px;
+    height: 2px;
+    background: #a291a5;
+  }
+}
