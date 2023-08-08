@@ -120,6 +120,15 @@
       width: 70%;
     }
   }
+  .pricing {
+    &__title {
+      margin-top: 80px;
+    }
+    &__variants-container {
+      justify-content: space-between;
+      width: 580px;
+    }
+  }
 }
 
 // laptop
@@ -216,6 +225,16 @@
     &__bottom-text::after {
       bottom: -18px;
       width: 90%;
+    }
+  }
+  .pricing {
+    &__title {
+      margin-top: 80px;
+    }
+    &__variants-container {
+      margin-top: 60px;
+      justify-content: center;
+      width: auto;
     }
   }
 }

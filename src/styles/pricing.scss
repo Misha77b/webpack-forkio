@@ -1,0 +1,94 @@
+.pricing {
+  padding: 10px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../images/pricing-back.png);
+  background-position: center;
+  background-size: cover;
+  &__title {
+    text-align: center;
+    @include fonts(Montserrat, 42px, 700);
+    color: $white-color;
+  }
+  &__variants-container {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  &__variant {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 257px;
+    height: 457px;
+    color: $white-color;
+    background: rgba(255, 255, 255, 0.11);
+  }
+  &__kind {
+    padding: 36px 0;
+    @include fonts(Montserrat, 24px, 400);
+    text-align: center;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+  }
+  &__price {
+    margin-top: 30px;
+    @include fonts(Montserrat, 60px, 700);
+  }
+  &__per-month {
+    margin-top: 22px;
+    @include fonts(Montserrat, 14px, 400);
+  }
+  &__divider {
+    margin-top: 40px;
+    width: 60px;
+    height: 5px;
+    background: $primary-color;
+  }
+  &__opportunities {
+    width: 210px;
+    text-align: center;
+    line-height: 28px;
+    margin-top: 30px;
+    @include fonts(Montserrat, 16px, 400);
+  }
+  &__purhase-btn {
+    position: absolute;
+    bottom: 40px;
+    padding: 15px 38px;
+    @include fonts(Montserrat, 15px, 400);
+    color: $white-color;
+    border-radius: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  &__active-variant {
+    width: 300px;
+    height: 560px;
+    background: rgba(70, 48, 72, 0.84);
+  }
+  &__pricing__active-kind {
+    background: rgba(0, 0, 0, 0.11);
+  }
+  &__active-price {
+    margin-top: 14px;
+    font-size: 82px;
+  }
+  &__active-month {
+    margin-top: 16px;
+  }
+  &__active-divider {
+    margin-top: 50px;
+  }
+  &__active-opportunities {
+    margin-top: 40px;
+  }
+  &__active-purhase-btn {
+    bottom: 47px;
+  }
+}

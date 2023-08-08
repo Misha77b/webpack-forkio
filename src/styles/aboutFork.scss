@@ -1,10 +1,9 @@
 .about-fork {
-  padding: 57px 25px 0;
+  padding: 57px 25px 20px;
   display: flex;
   flex-direction: column;
   background-image: url(../images/people-talk-back.png);
   background-position: center;
-  background-attachment: fixed;
   background-size: cover;
   &__title {
     margin-bottom: 53px;
@@ -38,7 +37,7 @@
     text-align: center;
   }
   &__bottom-text {
-    margin: 0 auto 40px;
+    margin: 0 auto 20px;
     padding: 0 10px;
     position: relative;
     text-align: center;
