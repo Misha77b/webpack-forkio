@@ -97,6 +97,29 @@
       max-height: 520px;
     }
   }
+  .about-fork {
+    padding: 87px 10px 0;
+    &__title {
+      font-size: 42px;
+      margin-bottom: 90px;
+    }
+    &__web-items-containet {
+      margin-bottom: 60px;
+    }
+    &__web-item {
+      justify-content: space-around;
+    }
+    &__buddha-img {
+      margin: 20px 0;
+    }
+    &__bottom-text {
+      padding: 0 20px;
+    }
+    &__bottom-text::after {
+      bottom: -20px;
+      width: 70%;
+    }
+  }
 }
 
 // laptop
@@ -144,7 +167,6 @@
     }
   }
   .editor {
-    margin-bottom: 30px;
     &__title {
       font-size: 54px;
     }
@@ -154,8 +176,8 @@
     }
   }
   .whatYouGet {
+    padding-bottom: 30px;
     position: relative;
-    // max-width: 1200px;
     background: #f4f4f4;
     display: flex;
     align-items: flex-end;
@@ -178,6 +200,22 @@
     }
     &__code-img {
       height: 519px;
+    }
+  }
+  .about-fork {
+    &__title {
+      font-size: 48px;
+    }
+    &__web-items-container {
+      margin-bottom: 120px;
+      gap: 110px 60px;
+    }
+    &__buddha-img {
+      margin: 0;
+    }
+    &__bottom-text::after {
+      bottom: -18px;
+      width: 90%;
     }
   }
 }
