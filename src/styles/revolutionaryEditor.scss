@@ -1,0 +1,100 @@
+.editor {
+  min-width: 320px;
+  &__title {
+    margin-bottom: 30px;
+    padding: 0 30px;
+    @include fonts(Montserrat, 26px, 700);
+    color: $dark-violet;
+    text-align: center;
+  }
+  &__text {
+    margin-bottom: 36px;
+    @include fonts(Lato, 14px, 400);
+    padding: 0 30px;
+    text-align: center;
+    color: #323232;
+  }
+}
+
+.editor-icons {
+  margin-bottom: 120px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px 15px;
+  &__item {
+    @include fonts(Montserrat, 12px, 700);
+    color: rgb(42, 42, 42);
+    cursor: pointer;
+  }
+  &__icons-text {
+    padding: 5px 8px;
+    position: relative;
+    background: rgb(237, 237, 237);
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 3px 0 0 3px;
+  }
+  &__icons-text::before {
+    vertical-align: middle;
+  }
+  &__watch-icon::before {
+    content: url(../images/eye.svg);
+  }
+  &__star-icon::before {
+    content: url(../images/star.svg);
+  }
+  &__fork-icon::before {
+    content: url(../images/fork.svg);
+  }
+  &__quantity {
+    padding: 5px 10px;
+    border: 1px solid rgb(126, 126, 126);
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+  }
+}
+
+.whatYouGet {
+  &__title {
+    padding: 0 20px;
+    margin-bottom: 35px;
+    @include fonts(Montserrat, 32px, 700);
+    color: $primary-color;
+    text-align: center;
+  }
+  &__products {
+    margin-bottom: 40px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &__products-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__products-desription {
+    text-align: center;
+  }
+  &__description-title {
+    margin: 26px auto 14px;
+    @include fonts(Montserrat, 16px, 400);
+    color: #323232;
+  }
+  &__description-text {
+    @include fonts(Lato, 14px, 400);
+    color: #848e97;
+    line-height: 21px;
+  }
+  &__code-img-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0 10px 10px;
+  }
+  &__code-img {
+    width: 100%;
+    min-height: 381px;
+  }
+}

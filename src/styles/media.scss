@@ -1,0 +1,240 @@
+// tablet
+@media (min-width: 481px) {
+  .header {
+    background-size: cover;
+  }
+  .navigation {
+    margin-bottom: 70px;
+    height: auto;
+    padding: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__logo-name {
+      display: block;
+    }
+    &__buy-now-btn {
+      @include fonts(Montserrat, 16px, 700);
+      padding: 15px 30px;
+    }
+    &__header-nav {
+      gap: 47px;
+      padding: 23px 0 0;
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      position: static;
+      background: transparent;
+      width: 100%;
+    }
+    &__header-nav-item {
+      @include fonts(Montserrat, 16px, 700);
+      padding: 0;
+      color: $primary-color;
+      border: none;
+    }
+  }
+  .burger {
+    display: none;
+  }
+  .header-section {
+    &__title {
+      @include fonts(Montserrat, 72px, 700);
+    }
+    &__subtitle {
+      @include fonts(Lato, 24px, 400);
+      width: 100%;
+      text-transform: none;
+    }
+    &__download-btn {
+      @include fonts(Montserrat, 21px, 700);
+      padding: 20px 60px;
+      border: 2px solid $primary-color;
+    }
+  }
+  .editor {
+    &__title {
+      font-size: 42px;
+    }
+    &__text {
+      margin-bottom: 35px;
+      font-size: 21px;
+    }
+  }
+  .whatYouGet {
+    &__title {
+      margin-bottom: 50px;
+      font-size: 42px;
+    }
+    &__products {
+      padding: 0 35px;
+      margin-bottom: 60px;
+      gap: 60px;
+    }
+    &__products-item {
+      flex-direction: row;
+      justify-content: center;
+    }
+    &__products-img {
+      margin-right: 23px;
+      align-self: center;
+    }
+    &__power-tool-img {
+      padding: 0 10.5px;
+    }
+    &__experiment-img {
+      padding: 0 25.5px;
+    }
+    &__speed-img {
+      padding: 0 20px;
+    }
+    &__products-desription {
+      max-width: 500px;
+      text-align: left;
+    }
+    &__code-img {
+      max-width: 700px;
+      max-height: 520px;
+    }
+  }
+  .about-fork {
+    padding: 87px 10px 0;
+    &__title {
+      font-size: 42px;
+      margin-bottom: 90px;
+    }
+    &__web-items-containet {
+      margin-bottom: 60px;
+    }
+    &__web-item {
+      justify-content: space-around;
+    }
+    &__buddha-img {
+      margin: 20px 0;
+    }
+    &__bottom-text {
+      padding: 0 20px;
+    }
+    &__bottom-text::after {
+      bottom: -20px;
+      width: 70%;
+    }
+  }
+  .pricing {
+    &__title {
+      margin-top: 80px;
+    }
+    &__variants-container {
+      justify-content: space-between;
+      width: 580px;
+    }
+  }
+}
+
+// laptop
+@media (min-width: 992px) {
+  .navigation {
+    margin: 0 auto 70px;
+    max-width: 1200px;
+    background: transparent;
+    justify-content: flex-end;
+    gap: 48px;
+    &__logo-link {
+      margin-right: auto;
+    }
+    &__logo-link:hover > &__logo-name {
+      color: white;
+    }
+    &__header-nav {
+      padding: 0;
+    }
+    &__logo-link:hover > &__logo-img-violet {
+      display: none;
+    }
+
+    &__logo-link:hover > &__logo-img-white {
+      display: block;
+    }
+    &__buy-now-btn {
+      order: 3;
+    }
+    &__buy-now-btn:hover {
+      color: $primary-color;
+      background: white;
+    }
+    &__header-nav {
+      width: auto;
+    }
+    &__header-nav-item:hover {
+      color: $white-color;
+    }
+  }
+  .header-section {
+    &__download-btn:hover {
+      color: #8d81ac;
+      background: white;
+    }
+  }
+  .editor {
+    &__title {
+      font-size: 54px;
+    }
+    &__text {
+      max-width: 860px;
+      margin: 0 auto 35px;
+    }
+  }
+  .whatYouGet {
+    padding-bottom: 30px;
+    position: relative;
+    background: #f4f4f4;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    &__title {
+      position: absolute;
+      top: 95px;
+      left: 45%;
+    }
+    &__products {
+      margin-bottom: 20px;
+      padding: 74px 0 0 20px;
+      gap: 30px;
+    }
+    &__products-desription {
+      max-width: 350px;
+    }
+    &__code-img-container {
+      padding: 0;
+    }
+    &__code-img {
+      height: 519px;
+    }
+  }
+  .about-fork {
+    &__title {
+      font-size: 48px;
+    }
+    &__web-items-container {
+      margin-bottom: 120px;
+      gap: 110px 60px;
+    }
+    &__buddha-img {
+      margin: 0;
+    }
+    &__bottom-text::after {
+      bottom: -18px;
+      width: 90%;
+    }
+  }
+  .pricing {
+    &__title {
+      margin-top: 80px;
+    }
+    &__variants-container {
+      margin-top: 60px;
+      justify-content: center;
+      width: auto;
+    }
+  }
+}
