@@ -1,74 +1,44 @@
-const path = require("path");
-// html-plugin
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// workbox-plugin
-const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
-// css-plugin
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
+const path = require("path");
 
-const isProduction = process.env.NODE_ENV == "production";
-
-// const stylesHandler = "style-loader";
-
-// for development
-const mode = process.env.NODE_ENV || "dvelopment";
-const devMode = mode === "development";
-const target = devMode ? "web" : "browserslist";
-const devtool = devMode ? "source-map" : undefined;
-
-const config = {
-  mode,
-  target,
-  devtool,
+module.exports = {
+  mode: "development",
   devServer: {
-    port: 3000,
     open: true,
     hot: true,
-    // compress: true,
+    port: 3000,
     host: "localhost",
   },
   entry: {
-    index: path.resolve(__dirname, "src", "index.js"),
+    main: path.resolve(__dirname, "./src/scripts/index.js"),
   },
+
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "./dist"),
+    filename: "index.js",
     clean: true,
-    filename: "[name].js",
-    assetModuleFilename: "images/[name][ext]",
   },
-  //   for debugging source-map
-  //   devtool: "source-map";
+
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Forkio",
-      filename: "[name].html",
-      template: path.resolve(__dirname, "src", "index.html"),
+      title: "webpack",
+      template: path.resolve(__dirname, "./src/index.html"), // template file
+      filename: "index.html", // output file
     }),
-    new MiniCssExtractPlugin({
-      filename: "styles/styles.css",
-    }),
-
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    new webpack.HotModuleReplacementPlugin(),
   ],
+
   module: {
     rules: [
+      // html
       {
-        test: /\.html$/,
+        test: /\.html$/i,
         loader: "html-loader",
-        // use: [
-        //     loader: "html-loader",
-        //   {
-        //     loader: "html-minifier-loader",
-        //     options: {
-        //       removeComments: true,
-        //       collapseWhitespace: true,
-        //     },
-        //   },
-        // ],
       },
+      //   babel
       {
-        test: /\.(js|jsx)$/i,
+        test: /\.(?:js|mjs|cjs)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -77,39 +47,27 @@ const config = {
           },
         },
       },
-      {
-        test: /\.css$/i,
-        use: [
-          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-          "css-loader",
-        ],
-      },
+      //   styles
       {
         test: /\.s[ac]ss$/i,
         use: [
-          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
           "css-loader",
+          // Compiles Sass to CSS
           "sass-loader",
         ],
       },
+      //   images
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset",
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: "asset/resource",
       },
-
-      // Add your rules for custom modules here
-      // Learn more about loaders from https://webpack.js.org/loaders/
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: "asset/inline",
+      },
     ],
   },
-};
-
-module.exports = () => {
-  if (isProduction) {
-    config.mode = "production";
-
-    config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
-  } else {
-    config.mode = "development";
-  }
-  return config;
 };
