@@ -1,10 +1,19 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
 const path = require("path");
 
+const mode =
+  process.env.NODE_ENV === "production" ? "production" : "development";
+const target = process.env.NODE_ENV === "production" ? "browserslist" : "web";
+
 module.exports = {
-  mode: "development",
+  mode: mode,
+  target: target,
   devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
     open: true,
     hot: true,
     port: 3000,
@@ -15,16 +24,20 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, "./dist"),
+    path: path.resolve(__dirname, "./dist/scripts"),
     filename: "index.js",
     clean: true,
+    assetModuleFilename: "../images/[hash][ext][query]",
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: "webpack",
+      title: "forkio",
       template: path.resolve(__dirname, "./src/index.html"), // template file
-      filename: "index.html", // output file
+      filename: "../index.html", // output file
+    }),
+    new MiniCssExtractPlugin({
+      filename: "../styles/style.css",
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
@@ -51,8 +64,10 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
+          MiniCssExtractPlugin.loader,
           // Creates `style` nodes from JS strings
-          "style-loader",
+          //   to get css file in dist folder this is not needed? we have extractPlugin
+          //   "style-loader",
           // Translates CSS into CommonJS
           "css-loader",
           // Compiles Sass to CSS
