@@ -51,7 +51,7 @@
     background: $primary-color;
   }
   &__opportunities {
-    width: 210px;
+    padding: 0 23px;
     text-align: center;
     line-height: 28px;
     margin-top: 30px;
@@ -87,6 +87,7 @@
   }
   &__active-opportunities {
     margin-top: 40px;
+    padding: 0 45px;
   }
   &__active-purhase-btn {
     bottom: 47px;
